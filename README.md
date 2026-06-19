@@ -1,6 +1,29 @@
 # PDF Compressor
 
-A simple Python tool to compress PDF files by reducing image quality and removing metadata.
+A Python-based PDF compression tool created specifically for publishing PDFs to the **NMRA (National Model Railroad Association) website**.
+
+## Purpose & Background
+
+### The Problem
+
+The NMRA website CMS has a **10MB file size limit** for PDF uploads. Many organizational documents exceed this limit, making it impossible to publish them through the standard webflow CMS.
+
+### Why a Custom Solution?
+
+Rather than relying on third-party tools or services, this custom compressor was created because:
+
+1. **Data Privacy & Security** - Keep sensitive documents in-house without uploading to external services
+2. **Consistency** - Control the compression algorithm and quality levels to ensure consistent results
+3. **Integration** - Easily integrate with internal workflows and batch processes
+4. **Cost Efficiency** - No subscription fees or usage limits
+5. **Customization** - Adjust compression parameters specifically for organizational needs
+
+### Use Cases
+
+- **Primary**: Compress organizational PDFs before uploading to NMRA website
+- **Secondary**: Batch compress multiple documents for archival, reduce storage space, prepare publications for digital distribution
+
+---
 
 ## Features
 
@@ -9,6 +32,7 @@ A simple Python tool to compress PDF files by reducing image quality and removin
 - 📁 **Batch Processing** - Compress multiple PDFs at once
 - 📊 **Statistics** - See detailed compression metrics
 - 🚀 **CLI Interface** - Easy-to-use command-line tool
+- 🔒 **No External Services** - Works completely offline
 
 ## Installation
 
@@ -65,11 +89,11 @@ python main.py version
 
 ## Quality Levels
 
-| Level  | Quality | Best For |
-|--------|---------|----------|
-| low    | 50%     | Text-heavy documents, maximum compression |
-| medium | 75%     | Balanced quality and file size (recommended) |
-| high   | 90%     | Graphics-heavy documents, minimal compression |
+| Level  | Quality | File Size Reduction | Best For |
+|--------|---------|-------------------|----------|
+| **low** | 50% | Maximum | Text-heavy documents, technical specs |
+| **medium** | 75% | Balanced | Most documents (recommended) |
+| **high** | 90% | Minimal | Documents with important graphics |
 
 ## How It Works
 
@@ -79,6 +103,36 @@ The compressor:
 3. Recompresses images to the selected quality level
 4. Writes the compressed PDF to the output path
 5. Reports compression statistics
+
+## Publishing Workflows
+
+### Standard Workflow
+
+```
+Original PDF (>10MB)
+        ↓
+    [Compress]
+        ↓
+Compressed PDF (<10MB)
+        ↓
+[Upload to NMRA CMS]
+        ↓
+[Publish to Website]
+```
+
+### Batch Processing Workflow
+
+```
+PDF Directory
+        ↓
+[Batch Compress All Files]
+        ↓
+Output Directory (All <10MB)
+        ↓
+[Verification & Review]
+        ↓
+[Upload to NMRA CMS]
+```
 
 ## Project Structure
 
@@ -107,9 +161,17 @@ pytest tests/ -v
 ## Dependencies
 
 - **pypdf** (4.0.1) - PDF manipulation
-- **Pillow** (10.1.0) - Image processing
+- **Pillow** (11.0.0) - Image processing
 - **click** (8.1.7) - CLI framework
 - **pytest** (7.4.3) - Testing framework
+
+## Technical Benefits
+
+- **No External API Calls** - Works completely offline
+- **Python-Based** - Easy to maintain and modify
+- **Simple CLI** - Easy to automate in scripts
+- **Detailed Logging** - Compression statistics and reporting
+- **Robust Error Handling** - Gracefully handles problematic files
 
 ## Limitations
 
@@ -120,11 +182,12 @@ pytest tests/ -v
 ## Future Enhancements
 
 - [ ] Advanced image recompression with quality profiles
+- [ ] Support for document splitting (if compression isn't sufficient)
+- [ ] Automated NMRA CMS integration
+- [ ] Web-based GUI for non-technical users
+- [ ] Scheduled batch compression tasks
+- [ ] Compression history and analytics
 - [ ] Support for password-protected PDFs
-- [ ] Parallel batch processing for faster compression
-- [ ] GUI interface
-- [ ] Compression presets
-- [ ] Detailed compression report generation
 
 ## License
 
@@ -137,4 +200,6 @@ Contributions are welcome! Feel free to submit issues or pull requests.
 ---
 
 **Version:** 1.0.0  
-**Last Updated:** 2026-06-19
+**Created:** 2026  
+**Purpose:** NMRA Website PDF Publishing  
+**Status:** Active & Maintained
