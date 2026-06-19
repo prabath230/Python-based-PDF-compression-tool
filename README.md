@@ -1,6 +1,6 @@
 # PDF Compressor
 
-A Python-based PDF compression tool created specifically for publishing PDFs to the **NMRA (National Model Railroad Association) website**.
+A Python-based PDF compression tool created specifically for publishing PDFs to the **NMRA (National Medicines regulatory Authority) website**.
 
 ## Purpose & Background
 
@@ -182,11 +182,6 @@ pytest tests/ -v
 ## Future Enhancements
 
 - [ ] Advanced image recompression with quality profiles
-- [ ] Support for document splitting (if compression isn't sufficient)
-- [ ] Automated NMRA CMS integration
-- [ ] Web-based GUI for non-technical users
-- [ ] Scheduled batch compression tasks
-- [ ] Compression history and analytics
 - [ ] Support for password-protected PDFs
 
 ## License
