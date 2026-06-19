@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # PDF Compressor
 
 A Python-based PDF compression tool created specifically for publishing PDFs to the **NMRA (National Medicines regulatory Authority) website**.
@@ -198,3 +199,7 @@ Contributions are welcome! Feel free to submit issues or pull requests.
 **Created:** 2026  
 **Purpose:** NMRA Website PDF Publishing  
 **Status:** Active & Maintained
+=======
+# Python-based-PDF-compression-tool
+A Python-based PDF compression tool created specifically for publishing PDFs to the **NMRA (National Medicines regulatory Authority) website**.
+>>>>>>> 89c2db0a96d6fd90ec44d058d0cf8ac0c0d272d8
